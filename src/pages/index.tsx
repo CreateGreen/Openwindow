@@ -33,8 +33,7 @@ export default function Home() {
           <Skysection />
         </section>
         
-        <section className="weathersection">
-          <h1>Open Window</h1>
+        <section className={styles.infosection}>
           
           <p>{Object.keys(weather)}</p>
           
