@@ -4,14 +4,15 @@
 }
 
 .sun {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background-color: rgba(255, 230, 0, 0.938);
-  border-radius: 50%;
+  border-radius: 50% 53% 50% 46% / 41% 49% 50% 53%;
   box-shadow: 0 0 0 20px rgba(255, 230, 0, 0.8),
     0 0 0 40px rgba(255, 230, 0, 0.6), 0 0 0 60px rgba(255, 230, 0, 0.4),
     0 0 0 80px rgba(255, 230, 0, 0.2), 0 0 40px 100px rgba(255, 230, 0, 0.1);
-  animation: sunrise 2s infinite linear forwards, rays 2s 2s infinite linear;
+  animation: sunrise 2s infinite linear forwards, rays 2s 2s infinite linear, 
+  morphing 5s infinite linear forwards;
 }
 
 @keyframes sunrise {
@@ -31,4 +32,18 @@
       0 0 0 40px rgba(255, 230, 0, 0.4), 0 0 0 60px rgba(255, 230, 0, 0.2),
       0 0 0 80px rgba(255, 230, 0, 0), 0 0 40px 100px rgba(255, 230, 0, 0.1);
   }
+}
+
+@keyframes morphing {
+  0%{
+    border-radius: 50% 53% 50% 46% / 41% 49% 50% 53%;
+  }
+  25%{
+    border-radius:44% 65% 50% 36% / 55% 30% 62% 51% ;
+  }
+  50%{
+    border-radius: 70% 33% 66% 36% / 61% 69% 40% 33%;
+  }
+
+
 }
