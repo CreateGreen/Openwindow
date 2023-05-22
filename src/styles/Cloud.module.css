@@ -1,0 +1,36 @@
+.container{
+    margin:0;
+    padding:0;
+}
+
+.cloud{
+    border-radius: 50%;
+}
+.svg{
+    width:150px;
+    height:150px;
+    fill:rgba(220, 220, 220, 0.678);
+    filter:blur(0.1px) drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.699));
+    
+    scale:2;
+    animation:aniblur 5s infinite linear
+}
+
+@keyframes aniblur{
+    0%{
+        filter:blur(0.1px) drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.699));;
+        scale:2;
+        
+    }
+    50%{
+        filter:blur(0.31px) drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.699));;
+        scale:1.8;
+        
+    }
+    75%{
+        filter:blur(0.5px) drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.699));;
+        scale:1.7;
+        
+    }
+
+}
