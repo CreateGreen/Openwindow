@@ -2,29 +2,30 @@ import styles from "@/styles/Home.module.css";
 import Skysection from "../components/Skysection";
 import Link from "next/link";
 import { useEffect,useState } from "react";
+import { QueryClient,useQuery,dehydrate } from "react-query";
+import {fetchWeather} from '../utils/queries/Getweather';
+
+export async function getStaticProps(){
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery({
+    queryKey:['getweather'],
+    queryFn:()=>fetchWeather()
+  })
+  return {
+    props:{
+      dehydratedState:dehydrate(queryClient),
+    },
+  }
+}
 
 
-export default function Home() {
-  const [weather,setweather]=useState([]);
 
-  useEffect(() => {
-    const fetchweather= async()=>{
-      const data = await fetch("api/getcurrent",{
-        method:"GET",
-      })
-      const resultdata = await data.json();
-      const weathermain = resultdata
-      setweather(weathermain)
-    }
+function Home() {
+  const {data} = useQuery('getweather',()=>fetchWeather());
+  console.log(data);
 
-    fetchweather();
-  }, []);
 
   //check weather state
-  useEffect(() =>{
-    console.log(weather)
-    
-  },[weather])
 
   return (
     <>
@@ -35,10 +36,11 @@ export default function Home() {
         
         <section className={styles.infosection}>
           
-          <p>{Object.keys(weather)}</p>
+          <p>{data?Object.keys(data):"loading"}</p>
           
         </section>
       </div>
     </>
   );
 }
+export default Home;
