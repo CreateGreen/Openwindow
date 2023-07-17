@@ -48,10 +48,15 @@
 
 --------------
 #### References
+
+##### component design
+- https://www.stevy.dev/react-design-guide/
+- 
+
 ##### Study next.js </br>
 
 ##### State management 
-
+- **reactquery** (https://tanstack.com/query/latest/docs/react/guides/queries)
 
 
 
