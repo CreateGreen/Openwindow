@@ -29,6 +29,8 @@
 
 
 
+## Structure 
+- Coupling and Cohesion -> https://alluring-stilton-b73.notion.site/3bfb9808d0ee42f7aec02fa49d1fc2a3?pvs=4 
 
 ## Learned
 
