@@ -31,7 +31,9 @@ function Home() {
     <>
       <div className={styles.home}>
         <section className={styles.skysection}>
-          <Skysection />
+          <Skysection 
+            curweather={data.weather[0].main}
+          />
         </section>
         
         <section className={styles.infosection}>
