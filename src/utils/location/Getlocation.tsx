@@ -1,9 +1,9 @@
 
 const Getlocation =()=>{
-    return{
-        
-    }
+    navigator.geolocation.getCurrentPosition((position)=>{
+        console.log(position.coords.latitude,position.coords.longitude);
+    })
 
 }
 
-export {Getlocation}
+export {Getlocation};

@@ -23,7 +23,7 @@ export async function getStaticProps(){
 function Home() {
   const {data} = useQuery('getweather',()=>fetchWeather());
   console.log(data);
-
+  
 
   //check weather state
 
@@ -32,7 +32,7 @@ function Home() {
       <div className={styles.home}>
         <section className={styles.skysection}>
           <Skysection 
-            curweather={data.weather[0].main}
+            curweather={data?.weather[0].main}
           />
         </section>
         
